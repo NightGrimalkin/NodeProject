@@ -1,12 +1,12 @@
 
-<link href="../../../public/styles/RegistrationStyle.css" rel="stylesheet" type="text/css" />
+<link href="./styles/RegistrationStyle.css" rel="stylesheet" type="text/css" />
 
 <div class="registerBox">
-    <form action="/auth" method="POST">
+    <form action="/login" method="POST">
         <label>Podaj Email użytkownika</label>
-        <input type="email">
+        <input type="email" name="email">
         <label>Podaj Hasło użytkownika</label>
-        <input type="password">
+        <input type="password" name="password">
         <input type="submit">
     </form>
 </div>

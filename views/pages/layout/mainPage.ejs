@@ -8,15 +8,14 @@
 </head>
 <body>
     <header>
-        <%- include(../partials/header.ejs, {data.user:user}, {data.page:page}) %>
+        <%- include('./../partials/header.ejs', {data:data}) %>
     </header>
     <% if(data.page == "main"){ %>
-        <%- include(../partials/carSelection.ejs, {data.cars:cars}) %>
-      <% } else if(data.page == "login"){ %>  
-        <%- include(../partials/login.ejs) %>
-     <% } %>
-     <%  else if(data.page == "register"){ %>  
-        <%- include(../partials/registration.ejs) %>
+        <%- include('./../partials/carSelection.ejs', {data:data}) %>
+      <% }if(data.page == "login"){ %>  
+        <%- include('./../partials/login.ejs') %>
+     <% } if(data.page == "register"){ %>  
+        <%- include('./../partials/registration.ejs') %>
      <% } %>
 </body>
 </html>
