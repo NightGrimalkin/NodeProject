@@ -6,7 +6,7 @@ loginRouter.post("/", (req, res) => {
   //TODO sesja
   //zapisz w sesji ze zalogowany 
   // if w mainie ze jesli zalogowany to przekazuje strone main
-  res.redirect()
+  res.redirect();
 });
 
 module.exports = loginRouter;
