@@ -1,0 +1,12 @@
+
+<link href="../../../public/styles/CarSelection.css" rel="stylesheet" type="text/css" />
+
+<div>
+    <dl>
+          <% data.cars.forEach((car) => {%>
+                <dt> <%=car.name%> </dt>
+                <dd><form action="/car/<%=car.name%>"><button>Przejdź do podstrony auta</button></form></dd>
+            <%}); %> 
+        
+    </dl>
+</div>

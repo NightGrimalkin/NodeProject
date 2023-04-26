@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria starych aut</title>
+</head>
+<body>
+    <header>
+        <%- include(../partials/header.ejs, {data.user:user}, {data.page:page}) %>
+    </header>
+    <% if(data.page == "main"){ %>
+        <%- include(../partials/carSelection.ejs, {data.cars:cars}) %>
+      <% } else if(data.page == "login"){ %>  
+        <%- include(../partials/login.ejs) %>
+     <% } %>
+     <%  else if(data.page == "register"){ %>  
+        <%- include(../partials/registration.ejs) %>
+     <% } %>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<link href="../../../public/styles/ChosenCar.css" rel="stylesheet" type="text/css" />
+
+<div>
+    <img src="../../../public/images/<%=car.imageSource%>">
+    <p><%=car.name%></p>
+    <p id="carPower">Moc auta wynosi: <%=car.power%> koni mechanicznych</p>
+    <p id="carTorque">Moment obrotowy auta wynosi: <%=car.torque%> niutonometrów</p>
+    <button onclick="calc()">Zmień jednostki</button>
+    <script data-carPower="<%=car.power%>" data-carTorque="<%=car.torque%>">
+        function calc(){
+            document.getElementById("carPower").innerHTML= "Moc auta wynosi: "+ (document.currentScript.dataset.carPower * 0,74) +" kilowatów";
+            document.getElementById("carTorque").innerHTML= "Moment obrotowy auta wynosi: "+ (document.currentScript.dataset.carTorque * 0,74) +" funtów na stopę";
+        }
+    </script>
+</div>
