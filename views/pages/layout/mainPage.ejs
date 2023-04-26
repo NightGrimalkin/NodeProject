@@ -8,13 +8,13 @@
 </head>
 <body>
     <header>
-        <%- include('./../partials/header.ejs', {data:data}) %>
+        <%- include('./../partials/header.ejs', {userInfo: userInfo, pageName: pageName}) %>
     </header>
-    <% if(data.page == "main"){ %>
-        <%- include('./../partials/carSelection.ejs', {data:data}) %>
-      <% }if(data.page == "login"){ %>  
+    <% if(pageToRender == "main"){ %>
+        <%- include('./../partials/carSelection.ejs', {carData: carData}) %>
+      <% }if(pageToRender == "login"){ %>  
         <%- include('./../partials/login.ejs') %>
-     <% } if(data.page == "register"){ %>  
+     <% } if(pageToRender == "register"){ %>  
         <%- include('./../partials/registration.ejs') %>
      <% } %>
 </body>

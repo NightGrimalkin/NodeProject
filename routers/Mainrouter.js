@@ -9,20 +9,20 @@ mainRouter.use("/registration", registrationRouter);
 mainRouter.use("/login", loginRouter);
 mainRouter.use("/car ", carInfoPageRouter);
 
-const testData = {
-  page: "login",
-  user: {
-    userName: "Gary",
-    visits: 10,
-  },
-  pageInfo: {
-    title: "Main",
-  },
-  cars: [{ name: "Jelcz" }, { name: "Penis" }, { name: "Chuj" }],
+const user = {
+  userName: "Gary",
+  visits: 10,
 };
 
+const cars = [{ name: "Jelcz" }, { name: "Penis" }, { name: "Chuj" }];
+
 mainRouter.get("/", (req, res) => {
-  res.render("./pages/layout/mainPage", { data: testData });
+  res.render("./pages/layout/mainPage", {
+    carData: cars,
+    userInfo: user,
+    pageName: "Strona Główna",
+    pageToRender: "main",
+  });
 });
 
 module.exports = mainRouter;

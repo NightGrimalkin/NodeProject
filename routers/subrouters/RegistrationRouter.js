@@ -14,7 +14,7 @@ registrationRouter.post("/",(req,res)=>{
             const sql = "INSERT INTO users(id,username,password,email) values (0,?,?,?)";
             db.query(sql,[user.username,user.password,user.email],(err,data)=>{
                 if(err) throw err;
-                //Udana rejestracja
+                
             })
         }
     })
