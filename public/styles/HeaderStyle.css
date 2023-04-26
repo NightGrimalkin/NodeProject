@@ -1,0 +1,11 @@
+.header{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+.title { grid-area: 1 / 2 / 2 / 3; }
+.userName { grid-area: 1 / 3 / 2 / 4; }
+.visits { grid-area: 1 / 4 / 2 / 5; }
