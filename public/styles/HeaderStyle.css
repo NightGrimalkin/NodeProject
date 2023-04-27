@@ -6,11 +6,13 @@
   grid-row-gap: 0px;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
   background-color: #1b4332;
-  color:bisque;
+  color: aliceblue;
 }
 .header > * {
     display:block;
     margin-left: auto;
+    margin-top: 8%;
+    margin-bottom: 8%;
     margin-right: auto;
     align-items: center;
 }

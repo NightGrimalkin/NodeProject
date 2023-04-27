@@ -26,7 +26,7 @@ const cars = [
     power: 34,
   },
   {
-    name: "Dodge_Challenger_I ",
+    name: "Dodge_Challenger_I",
     torque: 461,
     power: 279,
   },

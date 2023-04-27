@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const session = require("express-session");
 const cookieParser = require('cookie-parser');
-const db = require("../../mysql/database");
+const db = require("./mysql/database");
 const app = express();
 
 const PORT = 8080;
@@ -32,8 +32,10 @@ app.use(session({
 
 app.use("/", mainRouter);
 
-sql1 = "CREATE DATABASE IF NOT EXISTS `users` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
-sql2 = "CREATE TABLE IF NOT EXISTS `users` (`id` int(10) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,`username` varchar(50),`password` varchar(50),`email` varchar(50))";
+sql1 = "CREATE DATABASE IF NOT EXISTS `users` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" ;
+sql2 = "USE `users`";
+sql3 = "CREATE TABLE IF NOT EXISTS `users` (`id` int(10) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,`username` varchar(50),`password` varchar(50),`email` varchar(50))";
+
 
 const server = app.listen(PORT, (err) => {
     if (err) {
@@ -44,6 +46,9 @@ const server = app.listen(PORT, (err) => {
         if(err) throw err;
     })
     db.query(sql2,(err,data)=>{
+        if(err) throw err;
+    })
+    db.query(sql3,(err,data)=>{
         if(err) throw err;
     })
 })

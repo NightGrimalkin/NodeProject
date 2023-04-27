@@ -19,7 +19,7 @@ const cars = [
     power: 34,
   },
   {
-    name: "Dodge_Challenger_I ",
+    name: "Dodge_Challenger_I",
     torque: 461,
     power: 279,
   },
@@ -47,7 +47,7 @@ carInfoPageRouter.get("/:page", (req, res) => {
   const user = {
     userName: req.session.userName,
     visitsNumber:
-      req.cookies.number_of_visits!= undefined
+      req.cookies.number_of_visits != undefined
         ? req.cookies.number_of_visits[chosenCarName]
         : "",
   };
@@ -55,7 +55,11 @@ carInfoPageRouter.get("/:page", (req, res) => {
     if (chosenCar != undefined) {
       let numberOfVisits = req.cookies.number_of_visits;
       if (numberOfVisits != undefined) {
-        numberOfVisits[chosenCarName] = numberOfVisits[chosenCarName] + 1;
+        if (numberOfVisits[chosenCarName] == undefined) {
+          numberOfVisits[chosenCarName] = 1;
+        } else {
+          numberOfVisits[chosenCarName] = numberOfVisits[chosenCarName] + 1;
+        }
       } else {
         numberOfVisits = {};
         numberOfVisits[chosenCarName] = 1;
