@@ -11,11 +11,11 @@
         <%- include('./../partials/header.ejs', {userInfo: userInfo, pageName: pageName}) %>
     </header>
     <% if(pageToRender == "main"){ %>
-        <%- include('./../partials/carSelection.ejs', {carData: carData}) %>
+        <%- include('./../partials/carSelection.ejs', {carData: carData, userInfo: userInfo, numberOfVisits:numberOfVisits}) %>
       <% }if(pageToRender == "login"){ %>  
         <%- include('./../partials/login.ejs') %>
      <% } if(pageToRender == "register"){ %>  
-        <%- include('./../partials/registration.ejs', {msg: msg}) %>
+        <%- include('./../partials/registration.ejs') %>
      <% } %>
 </body>
 </html>

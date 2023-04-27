@@ -1,12 +1,25 @@
-
 <link href="./styles/CarSelection.css" rel="stylesheet" type="text/css" />
 
 <div>
-    <dl>
-          <% carData.forEach((car) => {%>
-                <dt> <%=car.name%> </dt>
-                <dd><form action="/car/<%=car.name%>"><button>Przejdź do podstrony auta</button></form></dd>
-            <%}); %> 
-        
-    </dl>
+  <h3>Data ostatnich odwiedzin: <%=userInfo.lastLogin%></h3>
+  <h4>Odwiedziny poszczególnych stron</h4>
+  <dl>
+    <% if(numberOfVisits != undefined){ %> <%
+    Object.keys(numberOfVisits).forEach(function(key) {%>
+    <dt><%=key%></dt>
+    <dd>
+      <p><%=numberOfVisits[key]%></p>
+    </dd>
+    <%});} %>
+  </dl>
+  <dl>
+    <% carData.forEach((car) => {%>
+    <dt><%=car.name%></dt>
+    <dd>
+      <form action="/car/<%=car.name%>">
+        <button>Przejdź do podstrony auta</button>
+      </form>
+    </dd>
+    <%}); %>
+  </dl>
 </div>

@@ -1,5 +1,10 @@
 <link href="/styles/ChosenCar.css" rel="stylesheet" type="text/css" />
+<header>
+  <%- include('./../partials/header.ejs', {userInfo: userInfo, pageName:
+  pageName}) %>
+</header>
 <div>
+  <a href="/">Powrót na stronę główną</a>
   <img src="/images/<%=car.imageSource%>" />
   <p><%=car.name%></p>
   <p id="carPower">Moc auta wynosi: <%=car.power%> koni mechanicznych</p>
@@ -7,16 +12,14 @@
     Moment obrotowy auta wynosi: <%=car.torque%> niutonometrów
   </p>
   <button onclick="calc()">Zmień jednostki</button>
-  <script data-carPower="<%=car.power%>" data-carTorque="<%=car.torque%>">
+  <script>
     function calc() {
+      var power = `<%- JSON.stringify(car.power) %>`;
+      var torque = `<%- JSON.stringify(car.torque) %>`;
       document.getElementById("carPower").innerHTML =
-        "Moc auta wynosi: " +
-        (document.currentScript.dataset.carPower * 0, 74) +
-        " kilowatów";
+        "Moc auta wynosi: " + power * 0.74 + " kilowatów";
       document.getElementById("carTorque").innerHTML =
-        "Moment obrotowy auta wynosi: " +
-        (document.currentScript.dataset.carTorque * 0, 74) +
-        " funtów na stopę";
+        "Moment obrotowy auta wynosi: " + torque * 0.74 + " funtów na stopę";
     }
   </script>
 </div>
