@@ -1,5 +1,5 @@
 const express = require("express");
-const registrationRouter = express();
+const registrationRouter = express.Router();
 const db = require("../../mysql/database");
 
 const sql = "SELECT * FROM users WHERE username = ?";
@@ -27,7 +27,6 @@ registrationRouter.post("/auth", (req, res, next) => {
   db.query(sql, [user.username], (err, data) => {
     if (err) throw err;
     if (data.length > 0) {
-      console.log(data.length);
       let message = "Użytkownik już istnieje";
       res.redirect(409,'/registration');
     } else {
