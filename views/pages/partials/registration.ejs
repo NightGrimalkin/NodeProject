@@ -2,13 +2,16 @@
 <link href="./styles/RegistrationStyle.css" rel="stylesheet" type="text/css" />
 
 <div class="registerBox">
-    <form action="/register" method="POST">
+    <% if(msg != ""){ %>
+        <h2 class="authError"><%= msg %></h2>
+        <% } %>
+    <form action="/registration/auth" method="POST">
         <label>Podaj Nazwę użytkownika</label>
-        <input type="text">
+        <input type="text" name="username">
         <label>Podaj Email użytkownika</label>
-        <input type="email">
+        <input type="email" name="email">
         <label>Podaj Hasło użytkownika</label>
-        <input type="password">
+        <input type="password" name="password">
         <input type="submit">
     </form>
 </div>

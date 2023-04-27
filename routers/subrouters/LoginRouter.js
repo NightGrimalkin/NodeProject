@@ -5,15 +5,16 @@ const db = require("../../mysql/database");
 const sql = "Select * from users where email = ? and password = ?";
 
 const user = {
-  userName: "Gary",
+  userName: "Proszę się zalogować",
   visits: 10,
 };
 
 loginRouter.get("/", (req, res) => {
   res.render("./pages/layout/mainPage", {
     userInfo: user,
-    pageName: "Strona Główna",
+    pageName: "Logowanie",
     pageToRender: "login",
+    msg: "",
   });
 });
 

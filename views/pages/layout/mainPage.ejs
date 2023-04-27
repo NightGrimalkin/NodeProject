@@ -15,7 +15,7 @@
       <% }if(pageToRender == "login"){ %>  
         <%- include('./../partials/login.ejs') %>
      <% } if(pageToRender == "register"){ %>  
-        <%- include('./../partials/registration.ejs') %>
+        <%- include('./../partials/registration.ejs', {msg: msg}) %>
      <% } %>
 </body>
 </html>
