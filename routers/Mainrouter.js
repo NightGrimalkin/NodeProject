@@ -44,7 +44,7 @@ const cars = [
 mainRouter.get("/", (req, res) => {
   const user = {
     userName:
-      req.session.userName == ""
+      req.session.userName == undefined
         ? "Proszę się zalogować"
         : req.session.userName,
     visitsNumber: "",

@@ -31,7 +31,7 @@ loginRouter.post("/auth", (req, res) => {
       res.cookie("last_login", Date.now(), { maxAge: 900000 });
       res.redirect("/");
     } else {
-      //logika błeu logowania
+      res.redirect("/login");
     }
   });
 });

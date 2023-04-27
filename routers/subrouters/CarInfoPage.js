@@ -46,7 +46,10 @@ carInfoPageRouter.get("/:page", (req, res) => {
   });
   const user = {
     userName: req.session.userName,
-    visitsNumber: req.cookies.number_of_visits[chosenCarName],
+    visitsNumber:
+      req.cookies.number_of_visits!= undefined
+        ? req.cookies.number_of_visits[chosenCarName]
+        : "",
   };
   if (req.session.logged_in == true) {
     if (chosenCar != undefined) {
